@@ -1,0 +1,49 @@
+name: DMI
+
+solver: svd.baseline
+
+GPUS: [0]
+dataset:
+  name: svd
+  view: config/datasets/svd/mocov3.yaml
+  meta: config/datasets/svd/meta.yaml
+  loader:
+    baseline_loader:
+      batch_size: 64
+      negative_batch_size: 2048
+      num_workers: 1
+    test_loader:
+      batch_size: 256
+      num_workers: 1
+
+model: DMI
+
+checkpoint_dir: checkpoint
+
+trainer: svd_train_one_epoch
+device: cuda
+
+metric_topk: [100]
+eval_step: 10
+epochs: 700
+
+optimizer:
+  name: Adam
+  args: []
+  kwargs:
+    lr: 0.0001
+    weight_decay: 0.0005
+lr_scheduler:
+  name: MultiStepLR
+  args: [[50]]
+  kwargs:
+    gamma: 0.1
+loss:
+  name: info_nce
+  args: []
+  alpha: 0.5
+  max_factor: 0.7
+  min_factor: 0.1
+  direct_factor: 1
+  kwargs:
+    temperature: 0.07

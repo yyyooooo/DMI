@@ -1,0 +1,10 @@
+all_video_id: svd/metadata-release/all-video-id
+labeled_id: svd/metadata-release/labeled-data-id
+unlabeled_id: svd/metadata-release/unlabeled-data-id
+query_id: svd/metadata-release/query-id
+groundtruth: svd/metadata-release/groundtruth
+train_groundtruth: svd/metadata-release/train_groundtruth
+test_groundtruth: svd/metadata-release/test_groundtruth
+
+video_path: svd/videos
+frame_path: svd/frames

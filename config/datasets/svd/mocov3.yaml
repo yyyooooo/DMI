@@ -1,0 +1,19 @@
+type: frame_level
+
+query:
+  feat_file: svd/features/mocov3_2048/query/features.npy
+  index_file: svd/features/mocov3_2048/query/index.txt
+  shape_file: svd/features/mocov3_2048/query/shape.txt
+  memmap: false
+labeled:
+  feat_file: svd/features/mocov3_2048/labeled/features.npy
+  index_file: svd/features/mocov3_2048/labeled/index.txt
+  shape_file: svd/features/mocov3_2048/labeled/shape.txt
+  memmap: true
+unlabeled:
+  feat_file: svd/features/mocov3_2048/unlabeled/features.npy
+  index_file: svd/features/mocov3_2048/unlabeled/index.txt
+  shape_file: svd/features/mocov3_2048/unlabeled/shape.txt
+  memmap: true
+
+max_frames: 60

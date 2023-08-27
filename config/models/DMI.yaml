@@ -1,0 +1,7 @@
+name: DMI
+input_dim: 2048
+one_dim: 256
+num_layer: 6
+output_dim: 256
+temperature: 0.05
+fusion: early_fusion

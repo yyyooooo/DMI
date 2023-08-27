@@ -1,0 +1,39 @@
+version: 1
+formatters:
+  brief:
+    format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+handlers:
+  console:
+    class: logging.StreamHandler
+    formatter: brief
+    level: INFO
+    stream: ext://sys.stdout
+  file:
+    class: logging.handlers.RotatingFileHandler
+    formatter: brief
+    filename: try.log
+
+loggers:
+  main:
+    level: INFO
+    handlers: [console,file]
+    propagate: no
+  featext:
+    level: INFO
+    handlers: [console,file]
+    propagate: no
+  datasets:
+    level: INFO
+    handlers: [console,file]
+    propagate: no
+  utils:
+    level: INFO
+    handlers: [console,file]
+    propagate: no
+  solver:
+    level: INFO
+    handlers: [console,file]
+    propagate: no
+root:
+  level: DEBUG
+  handlers: [console,file]
